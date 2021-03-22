@@ -1,7 +1,9 @@
 import time
 
 from selenium import webdriver  # импортируем webdriver
-
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 800))  
+display.start()
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get('https://defirex.org/')
