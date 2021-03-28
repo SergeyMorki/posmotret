@@ -2,8 +2,10 @@ import time
 
 from selenium import webdriver  # импортируем webdriver
 
-driver = webdriver.Chrome()
-driver.maximize_window()
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(1400, 1200))  
+display.start()
+driver = webdriver.Chrome("/usr/bin/chromedriver")
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
