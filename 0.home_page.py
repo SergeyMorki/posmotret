@@ -4,7 +4,7 @@ from selenium import webdriver  # импортируем webdriver
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
 display.start()
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(executable_path="home/tdallstr/chromedriver_linux64")
 driver.maximize_window()
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
