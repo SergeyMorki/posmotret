@@ -9,7 +9,7 @@ driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
 logo = driver.find_element_by_css_selector('.col-xl-2.col-lg-2.col-md-2.col-sm-6.col-6.logo_box').click()
-
+time.sleep(5)
 Guarantees = driver.find_element_by_css_selector('.mat-focus-indicator>.mat-button-wrapper')
 Guarantees.click()
 
