@@ -6,9 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 display = Display(visible=0, size=(1920, 1080))  
 display.start()
-driver1 = webdriver.Chrome("/usr/bin/chromedriver")
-driver = webdriver.Chrome()
-driver == driver1
+driver = webdriver.Chrome("/usr/bin/chromedriver")
 driver.get('https://defirex.org/')
 
 menu = driver.find_element_by_css_selector('.slog>.mobile_button').click()
