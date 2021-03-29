@@ -5,6 +5,7 @@ from pyvirtualdisplay import Display
 display = Display(visible=0, size=(1920, 1080))  
 display.start()
 driver = webdriver.Chrome("/usr/bin/chromedriver")
+driver.maximize_window()
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
