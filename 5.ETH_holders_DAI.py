@@ -16,7 +16,7 @@ wait(EC.element_to_be_clickable((By.CSS_SELECTOR,'.menu>.mat-menu-trigger>.warra
 wait(EC.element_to_be_clickable((By.CSS_SELECTOR,'.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(5)'))).click()
 
 #eth_holders = driver.find_element_by_css_selector('.mat-menu-content>:nth-child(5)').click()
-owners_DAI = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>[href="https://etherscan.io/token/0xfACd9A6fD887855d9432F7a080911b26d9DCAE01#balances"]').click()
+wait(EC.element_to_be_clickable((By.CSS_SELECTOR,'.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>[href="https://etherscan.io/token/0xfACd9A6fD887855d9432F7a080911b26d9DCAE01#balances"]'))).click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
