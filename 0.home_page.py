@@ -16,7 +16,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 gar = driver.find_element_by_css_selector('.menu>.mat-menu-trigger').click()
-
+time.sleep(2)
 balance_on_Etherscan = driver.find_element_by_css_selector('.mat-menu-content>:nth-child(1)').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
