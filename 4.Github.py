@@ -14,7 +14,7 @@ menu = driver.find_element_by_css_selector('.slog>.mobile_button').click()
 wait = WebDriverWait(driver, 15).until
 
 wait(EC.element_to_be_clickable((By.CSS_SELECTOR,'.menu>.mat-menu-trigger>.warranty'))).click()
-wait(EC.element_to_be_clickable((By.CSS_SELECTOR, '.mat-menu-content>[href="https://github.com/DeFireX"]'))).click()
+wait(EC.element_to_be_clickable((By.CSS_SELECTOR, '.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(4)'))).click()
 
 #github = driver.find_element_by_css_selector('.mat-menu-content>[href="https://github.com/DeFireX"]').click()
 new_window = driver.window_handles[1]
