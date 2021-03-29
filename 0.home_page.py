@@ -17,7 +17,8 @@ from selenium.webdriver.support import expected_conditions as EC
 wait = WebDriverWait(driver, 15).until
 wait(EC.element_to_be_clickable((By.CSS_SELECTOR,'.menu>.mat-menu-trigger'))).click()
 
-balance_on_Etherscan = driver.find_element_by_css_selector('.mat-menu-content>:nth-child(1)').click()
+wait(EC.element_to_be_clickable((By.CSS_SELECTOR,'.mat-menu-content>:nth-child(1)'))).click()
+
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
