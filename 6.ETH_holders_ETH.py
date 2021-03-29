@@ -21,4 +21,5 @@ current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
 time.sleep(2)
 assert driver.current_url == "https://etherscan.io/token/0xF145A9e7Edc6D5a27BBdd16E4E29F5Fe56671A22#balances"
+display.stop()
 driver.quit()
