@@ -10,4 +10,5 @@ driver.implicitly_wait(5)
 App = driver.find_element_by_link_text('App').click()
 assert driver.current_url == "https://defirex.org/account"
 driver.back()
+display.stop()
 driver.quit()
