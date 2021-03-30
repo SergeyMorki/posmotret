@@ -13,6 +13,7 @@ driver.implicitly_wait(5)
 
 time.sleep(1)
 How_the_defirex = driver.find_element_by_id('mat-expansion-panel-header-2').click()
+time.sleep(2)
 medium = driver.find_element_by_id('article_medium').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
