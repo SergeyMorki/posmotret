@@ -2,8 +2,11 @@ import time
 
 from selenium import webdriver  # импортируем webdriver
 
+display = Display(visible=0, size=(1920, 1080))  
+display.start()
+driver1 = webdriver.Chrome("/usr/bin/chromedriver")
 driver = webdriver.Chrome()
-driver.maximize_window()
+driver == driver1
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
