@@ -27,7 +27,7 @@ driver.switch_to.window(new_window)
 assert driver.current_url == "https://etherscan.io/token/0xfACd9A6fD887855d9432F7a080911b26d9DCAE01"
 driver.close()
 driver.switch_to.window(current_window)
-
+time.sleep(2)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 on_ETH = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(1)')
 time.sleep(2)
