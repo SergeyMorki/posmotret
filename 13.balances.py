@@ -33,6 +33,7 @@ on_ETH = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>
 time.sleep(2)
 on_ETH.click()
 ETH_funds = driver.find_element_by_link_text('ETH funds holders')
+time.sleep(2)
 ETH_funds.click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
