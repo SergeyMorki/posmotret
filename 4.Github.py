@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver  # импортируем webdriver
 from pyvirtualdisplay import Display
 from selenium.webdriver.common.by import By
