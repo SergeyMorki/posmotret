@@ -9,7 +9,7 @@ display = Display(visible=0, size=(1024, 768))
 display.start()
 driver = webdriver.Chrome("/usr/bin/chromedriver")
 driver.get('https://defirex.org/')
-driver.implicitly_wait(5)
+driver.implicitly_wait(10)
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
