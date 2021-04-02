@@ -11,7 +11,7 @@ driver1 = webdriver.Chrome("/usr/bin/chromedriver")
 driver = webdriver.Chrome()
 driver == driver1
 driver.get('https://defirex.org/')
-driver.implicitly_wait(5)
+driver.implicitly_wait(10)
 
 menu = driver.find_element_by_css_selector('.slog>.mobile_button').click()
 wait = WebDriverWait(driver, 15).until
