@@ -21,6 +21,7 @@ time.sleep(2)
 on_ETH.click()
 time.sleep(2)
 DAI_funds = driver.find_element_by_link_text('DAI funds holders').click()
+time.sleep(2)
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
