@@ -33,7 +33,7 @@ time.sleep(2)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 time.sleep(2)
 on_ETH = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(1)').click()
-time.sleep(2)
+time.sleep(5)
 ETH_funds = driver.find_element_by_link_text('ETH funds holders').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
