@@ -19,8 +19,7 @@ users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-i
 on_ETH = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(1)')
 time.sleep(2)
 on_ETH.click()
-DAI_funds = driver.find_element_by_link_text('DAI funds holders')
-DAI_funds.click()
+DAI_funds = driver.find_element_by_link_text('DAI funds holders').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
