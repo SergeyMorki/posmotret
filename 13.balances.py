@@ -19,9 +19,7 @@ users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-i
 on_ETH = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(1)')
 time.sleep(2)
 on_ETH.click()
-time.sleep(2)
 DAI_funds = driver.find_element_by_link_text('DAI funds holders')
-time.sleep(2)
 DAI_funds.click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
@@ -32,12 +30,12 @@ driver.switch_to.window(current_window)
 time.sleep(2)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 time.sleep(2)
-on_ETH = driver.find_element_by_css_selector('.cdk-overlay-pane>.mat-menu-panel>.mat-menu-content>:nth-child(1)').click()
-time.sleep(5)
-ETH_funds = driver.find_element_by_link_text('ETH funds holders').click()
+ETH_funds = driver.find_element_by_link_text('Users balances on BSC').click()
+DAI_funds = driver.find_element_by_link_text('DAI funds holders').click()
+
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
-assert driver.current_url == "https://etherscan.io/token/0xF145A9e7Edc6D5a27BBdd16E4E29F5Fe56671A22"
+assert driver.current_url == "https://www.bscscan.com/token/0x308853AeC7cF0ECF133ed19C0c1fb3b35f5a4E7B"
 
 driver.quit()
