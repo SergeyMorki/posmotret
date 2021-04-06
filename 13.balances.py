@@ -20,7 +20,7 @@ on_ETH = driver.find_element_by_link_text('Users balances on Ethereum')
 time.sleep(2)
 on_ETH.click()
 DAI_funds = driver.find_element_by_link_text('DAI funds holders')
-time.sleep()
+time.sleep(2)
 DAI_funds.click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
