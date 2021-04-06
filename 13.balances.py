@@ -55,6 +55,7 @@ driver.switch_to.window(current_window)
 time.sleep(2)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 ETH_funds = driver.find_element_by_link_text('Users balances on BSC').click()
+time.sleep(1)
 DAI_funds = driver.find_element_by_link_text('USDT funds holders').click()
 
 new_window = driver.window_handles[1]
@@ -66,6 +67,7 @@ driver.switch_to.window(current_window)
 time.sleep(2)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 ETH_funds = driver.find_element_by_link_text('Users balances on BSC').click()
+time.sleep(2)
 DAI_funds = driver.find_element_by_link_text('DFXBUSD funds holders').click()
 
 new_window = driver.window_handles[1]
@@ -77,6 +79,7 @@ driver.switch_to.window(current_window)
 time.sleep(2)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 ETH_funds = driver.find_element_by_link_text('Users balances on BSC').click()
+time.sleep(2)
 DAI_funds = driver.find_element_by_link_text('DFX funds holders').click()
 
 new_window = driver.window_handles[1]
