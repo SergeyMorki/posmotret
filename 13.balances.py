@@ -31,6 +31,7 @@ driver.switch_to.window(current_window)
 users_balance = driver.find_element_by_css_selector('.mat-menu-trigger.ng-star-inserted').click()
 time.sleep(2)
 ETH_funds = driver.find_element_by_link_text('Users balances on BSC').click()
+time.sleep(2)
 DAI_funds = driver.find_element_by_link_text('DAI funds holders').click()
 
 new_window = driver.window_handles[1]
