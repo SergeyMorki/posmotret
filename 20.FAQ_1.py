@@ -2,18 +2,15 @@ import time
 
 from selenium import webdriver  # импортируем webdriver
 
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(1400, 1200))  
-display.start()
-driver = webdriver.Chrome("/usr/bin/chromedriver")
+driver = webdriver.Chrome()
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
-time.sleep(1)
+
 What_is = driver.find_element_by_id('mat-expansion-panel-header-0')
 What_is.click()
 What_is.click()
-time.sleep(5)
+
 code_on_github = driver.find_element_by_id('source_github').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
@@ -24,7 +21,7 @@ driver.switch_to.window(current_window)
 
 owners_in_ETH = driver.find_element_by_id('funds_owners_eth')
 owners_in_ETH.click()
-time.sleep(1)
+
 owners_DAI = driver.find_element_by_css_selector('.mat-menu-content>:nth-child(1)').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
@@ -34,7 +31,7 @@ driver.close()
 driver.switch_to.window(current_window)
 
 owners_in_ETH.click()
-time.sleep(1)
+
 owners_ETH = driver.find_element_by_css_selector('.mat-menu-content>:nth-child(2)').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
