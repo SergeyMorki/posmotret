@@ -77,7 +77,7 @@ BTCB_funds_holders = driver.find_element_by_link_text('BUSD+USDT+USDC funds hold
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
-assert driver.current_url == "https://www.bscscan.com/token/0x7CA1fEA7d198cEaE9A319B5EE89E860aAB7D82d7"
+assert driver.current_url == "https://www.bscscan.com/token/0x5DaA08aF18104702d4a387027E09b9b83b0fc720"
 driver.close()
 driver.switch_to.window(current_window)
 

@@ -25,5 +25,4 @@ driver.switch_to.window(current_window)
 DFX_Airdrop = driver.find_element_by_link_text('DFX Airdrop').click()
 current_window = driver.current_window_handle
 assert driver.current_url == "https://defirex.org/airdrop-dfx"
-
 driver.quit()
