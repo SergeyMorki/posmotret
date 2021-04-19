@@ -25,10 +25,5 @@ driver.switch_to.window(current_window)
 DFX_Airdrop = driver.find_element_by_link_text('DFX Airdrop').click()
 current_window = driver.current_window_handle
 assert driver.current_url == "https://defirex.org/airdrop-dfx"
-buy = driver.find_element_by_link_text('Buy DFX').click()
-new_window = driver.window_handles[1]
-current_window = driver.current_window_handle
-driver.switch_to.window(new_window)
-assert driver.current_url == "https://app.1inch.io/#/56/swap/BUSD/DFX"
 
 driver.quit()
