@@ -1,6 +1,15 @@
 import telebot
 from telebot import types
+import re
+
 bot = telebot.TeleBot('1793950729:AAFOMPnZPk9sZ73aUfk7GoqLwrYGIblBLvk')
+
+allowedUrls = [
+    'https://defirex.org/',
+    'https://wiki.defirex.org/',
+]
+urlPattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
@@ -28,14 +37,18 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, 'Ты написал мне, вот полезности', reply_markup=first_keyboard())
     elif message.text == "/start":
         bot.send_message(message.from_user.id, 'Вот полезности', reply_markup=base_keyboard())
+    elif any(string not in allowedUrls for string in re.findall(urlPattern, message.text)):
+        bot.delete_message(message.chat.id, message.message_id)
+
 
 def first_keyboard():
     keyboard_1 = [
         [
-        types.InlineKeyboardButton(text="Помощник DeFireX", url="https://t.me/DefirexRuBot")
+            types.InlineKeyboardButton(text="Помощник DeFireX", url="https://t.me/DefirexRuBot")
         ],
     ]
     return types.InlineKeyboardMarkup(keyboard_1)
+
 
 def base_keyboard():
     keyboard = [
@@ -52,6 +65,7 @@ def base_keyboard():
         ],
     ]
     return types.InlineKeyboardMarkup(keyboard)
+
 
 def base_inline_keyboard():
     keyboard1 = [
@@ -77,37 +91,48 @@ def base_inline_keyboard():
     ]
     return types.InlineKeyboardMarkup(keyboard1)
 
+
 def inline_keyboard():
     keyboard2 = [
         [
-            types.InlineKeyboardButton(text="Пополнение Metamask", url="https://wiki.defirex.org/ru/instructionsRu.html#metamask"),
+            types.InlineKeyboardButton(text="Пополнение Metamask",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#metamask"),
         ],
         [
-            types.InlineKeyboardButton(text="Вывод монет", url="https://wiki.defirex.org/ru/instructionsRu.html#defirex"),
+            types.InlineKeyboardButton(text="Вывод монет",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#defirex"),
         ],
         [
-            types.InlineKeyboardButton(text="Добавление кастомного токена в MetaMask", url="https://wiki.defirex.org/ru/instructionsRu.html#id2"),
+            types.InlineKeyboardButton(text="Добавление кастомного токена в MetaMask",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#id2"),
         ],
         [
-            types.InlineKeyboardButton(text="Перевод токенов из сети Eth в BSC сеть", url="https://wiki.defirex.org/ru/instructionsRu.html#metamask-ethereum-bsc"),
+            types.InlineKeyboardButton(text="Перевод токенов из сети Eth в BSC сеть",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#metamask-ethereum-bsc"),
         ],
         [
-            types.InlineKeyboardButton(text="Пополнение пула, стейкинг, фарминг", url="https://wiki.defirex.org/ru/instructionsRu.html#id3"),
+            types.InlineKeyboardButton(text="Пополнение пула, стейкинг, фарминг",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#id3"),
         ],
         [
-            types.InlineKeyboardButton(text="Фарминг в пуле DFX-BUSD", url="https://wiki.defirex.org/ru/instructionsRu.html#dfx-busd-pancakeswap-lp-cake-bsc"),
+            types.InlineKeyboardButton(text="Фарминг в пуле DFX-BUSD",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#dfx-busd-pancakeswap-lp-cake-bsc"),
         ],
         [
-            types.InlineKeyboardButton(text="Переключение Metamask на сеть Binance Smart Chain", url="https://wiki.defirex.org/ru/instructionsRu.html#metamask-binance-smart-chain"),
+            types.InlineKeyboardButton(text="Переключение Metamask на сеть Binance Smart Chain",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#metamask-binance-smart-chain"),
         ],
         [
-            types.InlineKeyboardButton(text="Перевод DFX из Ethereum в BSC сеть", url="https://wiki.defirex.org/ru/instructionsRu.html#dfx-ethereum-bsc"),
+            types.InlineKeyboardButton(text="Перевод DFX из Ethereum в BSC сеть",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#dfx-ethereum-bsc"),
         ],
         [
-            types.InlineKeyboardButton(text="Работа сервиса в телефоне", url="https://wiki.defirex.org/ru/instructionsRu.html#id4"),
+            types.InlineKeyboardButton(text="Работа сервиса в телефоне",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#id4"),
         ],
         [
-            types.InlineKeyboardButton(text="Сервис на Trust Wallet в iOS", url="https://wiki.defirex.org/ru/instructionsRu.html#c-trust-wallet-ios"),
+            types.InlineKeyboardButton(text="Сервис на Trust Wallet в iOS",
+                                       url="https://wiki.defirex.org/ru/instructionsRu.html#c-trust-wallet-ios"),
         ],
         [
             types.InlineKeyboardButton(text="Назад", callback_data=5)
@@ -115,22 +140,29 @@ def inline_keyboard():
     ]
     return types.InlineKeyboardMarkup(keyboard2)
 
+
 @bot.callback_query_handler(func=lambda call: True)
 def query_handler(call):
     if call.data == '3':
-        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=base_inline_keyboard())
+        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      reply_markup=base_inline_keyboard())
     elif call.data == '4':
-        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=inline_keyboard())
+        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      reply_markup=inline_keyboard())
     elif call.data == '5':
-        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=base_keyboard())
+        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      reply_markup=base_keyboard())
     elif call.data == '2':
-        bot.send_message(call.message.chat.id,"Недавно:" + "\n" + "11.03.2021 - Листинг токена DFX на CoinMarketCap" + "\n" + "12.03.2021 - Завершения private-sale раундов" + "\n" +
+        bot.send_message(call.message.chat.id,
+                         "Недавно:" + "\n" + "11.03.2021 - Листинг токена DFX на CoinMarketCap" + "\n" + "12.03.2021 - Завершения private-sale раундов" + "\n" +
                          "15.03.2021 - AirDrop 100.000 DFX" + "\n" + "20.03.2021 - Листинг на 1inch" + "\n" +
                          "31.03.2021 - Листинг на CoinGecko" + "\n" + " " + "\n"
-                         "Уже скоро:" + "\n" + "20.04.2021 - Участие на международном форуме Blockchain Life 2021" + "\n" +
+                                                                            "Уже скоро:" + "\n" + "20.04.2021 - Участие на международном форуме Blockchain Life 2021" + "\n" +
                          "Q1-Q2 2021 - Добавление пула BTC" + "\n" +
                          "Q2-Q4 2021 - Добавление новых пулов ETH, BNB и стейблкоинов")
     elif call.data == '1':
-        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup=base_keyboard())
+        bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id,
+                                      reply_markup=base_keyboard())
+
 
 bot.polling()
