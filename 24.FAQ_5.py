@@ -3,6 +3,7 @@ import time
 from selenium import webdriver  # импортируем webdriver
 
 driver = webdriver.Chrome()
+
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
