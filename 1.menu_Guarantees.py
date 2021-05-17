@@ -2,8 +2,8 @@ import time
 
 from selenium import webdriver  # импортируем webdriver
 
-driver = webdriver.Chrome()
 
+driver = webdriver.Chrome()
 driver.get('https://defirex.org/')
 driver.implicitly_wait(5)
 
@@ -49,16 +49,107 @@ driver.switch_to.window(current_window)
 
 Guarantees = driver.find_element_by_link_text('Guarantees').click()
 bsc_holders = driver.find_element_by_css_selector('#mat-menu-panel-0>:nth-child(1)>:nth-child(6)').click()
+BUSDUSDT = driver.find_element_by_link_text('BUSD+USDT funds holders').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
-assert driver.current_url == "https://bscscan.com/token/0x308853AeC7cF0ECF133ed19C0c1fb3b35f5a4E7B#balances"
+assert driver.current_url == "https://www.bscscan.com/token/0x987f04DecE1c5AE9E69cF4F93D00bBE2cA5Af98c"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6)').click()
+DFXBUSD = driver.find_element_by_link_text('DFX-BUSD funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0xe4743bee99d515a2C36C30B37e3756750fE24c9D"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6)').click()
+DFX_funds = driver.find_element_by_link_text('DFX funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0x11340dC94E32310FA07CF9ae4cd8924c3cD483fe"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+btcb = driver.find_element_by_link_text('BTCB funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0x7CA1fEA7d198cEaE9A319B5EE89E860aAB7D82d7"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+busd_holders = driver.find_element_by_link_text('BUSD funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0xAB2f29783265940305EA99573AA18bD301911a09"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+elipsis = driver.find_element_by_link_text('3POOL ELIPSIS funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0x5DaA08aF18104702d4a387027E09b9b83b0fc720"
 driver.close()
 driver.switch_to.window(current_window)
 
 
 Guarantees = driver.find_element_by_link_text('Guarantees').click()
-work = driver.find_element_by_css_selector('#mat-menu-panel-0>:nth-child(1)>:nth-child(7)').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+nerve = driver.find_element_by_link_text('3POOL NERVE funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0x48bFdF75B1315A2D27293fAD7221790f3DfeA1b0"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+eth = driver.find_element_by_link_text('ETH funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0x735ba150d6A842B1feE3737F023fDdF781CfEaA0"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+xrp = driver.find_element_by_link_text('XRP funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0x2df142fc7e0f7164c90c9f93e3012d956c34c299"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+dott = driver.find_element_by_link_text('DOT funds holders').click()
+new_window = driver.window_handles[1]
+current_window = driver.current_window_handle
+driver.switch_to.window(new_window)
+assert driver.current_url == "https://www.bscscan.com/token/0xaa954f2c619377a61380bfd084359e69d445a856"
+driver.close()
+driver.switch_to.window(current_window)
+
+Guarantees = driver.find_element_by_link_text('Guarantees').click()
+work = driver.find_element_by_link_text('How it works').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
@@ -67,21 +158,13 @@ driver.close()
 driver.switch_to.window(current_window)
 
 Guarantees = driver.find_element_by_link_text('Guarantees').click()
-own_DAI = driver.find_element_by_css_selector('#mat-menu-panel-0>:nth-child(1)>:nth-child(5)').click()
-Funds_Owners_DAI = driver.find_element_by_link_text('Funds Owners DAI').click()
+eth_holders = driver.find_element_by_link_text('Ethereum holders').click()
+DAI_funds_holders = driver.find_element_by_link_text('DAI funds holders').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
 driver.switch_to.window(new_window)
-assert driver.current_url == "https://etherscan.io/token/0xfACd9A6fD887855d9432F7a080911b26d9DCAE01#balances"
+assert driver.current_url == "https://etherscan.io/token/0xfACd9A6fD887855d9432F7a080911b26d9DCAE01"
 driver.close()
 driver.switch_to.window(current_window)
-
-Guarantees = driver.find_element_by_link_text('Guarantees').click()
-own_ETH = driver.find_element_by_css_selector('#mat-menu-panel-0>:nth-child(1)>:nth-child(5)').click()
-Funds_Owners_ETH = driver.find_element_by_link_text('Funds Owners ETH').click()
-new_window = driver.window_handles[1]
-current_window = driver.current_window_handle
-driver.switch_to.window(new_window)
-assert driver.current_url == "https://etherscan.io/token/0xF145A9e7Edc6D5a27BBdd16E4E29F5Fe56671A22#balances"
 
 driver.quit()
