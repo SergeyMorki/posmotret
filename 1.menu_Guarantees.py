@@ -88,7 +88,7 @@ driver.close()
 driver.switch_to.window(current_window)
 
 Guarantees = driver.find_element_by_link_text('Guarantees').click()
-bsc_holders = driver.find_element_by_css_selector('.cdk-overlay-pane>:nth-child(1)>:nth-child(1)>:nth-child(6').click()
+bsc_holders = driver.find_element_by_link_text('BSC holders').click()
 busd_holders = driver.find_element_by_link_text('BUSD funds holders').click()
 new_window = driver.window_handles[1]
 current_window = driver.current_window_handle
